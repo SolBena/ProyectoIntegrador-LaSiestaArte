@@ -1,0 +1,233 @@
+.login input  {
+    background-color: blue;
+ }
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--subtitulos);
+    background-image: url("../img/background.jpg");
+    width: 100%;
+    justify-content: center;
+}
+
+.login .cont-titulo {
+    margin-bottom: 20px;
+}
+
+.login .titulo{
+    font-family: var(--titulos);
+    text-align: center;
+    color: var(--rojo);
+    margin-top: 35px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.login .formLogin{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} 
+
+.login .form-titulo{
+
+    display: flex;
+    justify-content: left;
+    color: var(--bordo);
+    font-family: var(--subtitulos);
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 5px;
+
+}
+
+.login .tamaño {
+    text-decoration: none;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    border-radius: 10px;  
+    background: transparent;
+    border: 1px solid var(--rojo);
+    font-family: var(--subtitulos);
+    padding: 5px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login .fila input::placeholder {
+    color: var(--bordo);
+}
+
+.login .botonLoginContenedor{
+    border: none;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login .botonLogin {
+    border: none;
+    color: white;
+    width: 110px;
+    padding: 9px;
+    border-radius: 10px;
+    background-color: var(--rojo);
+    font-family: var(--textos);
+    margin-bottom: 70px;
+}
+
+.login .is-invalid{
+    border: 2px solid var(--rojo);
+    background-color: var(--crema);
+}
+
+.login .is-valid{
+    border: 2px solid var(--verde);
+    background-color: var(--crema);
+}
+
+.login .is-validSmall{
+    margin-left: 10px;
+    background-color: var(--crema);
+    color: var(--amarillo);
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos)
+}
+
+
+.login .is-invalidSmall {
+    margin-left: 10px;
+    background-color: var(--crema);
+    color: var(--rojo);;
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos);
+}
+
+
+
+.login small {
+    color: var(--rojo);
+    border-radius: 30px;
+} 
+
+.login .contraseña .fila {
+    position: relative;
+}
+
+.login .icon-eye{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(35%);
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+.login .icon-eye:hover{
+    color: var(--bordo);
+}
+
+
+.login .button p {
+    padding: 10px 15px;
+    font-family: var(--subtitulos);
+}
+
+.login .button {
+    border: solid 2px var(--rojo);
+    color: var(--rojo);
+    background-color: var(--crema);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.login .remember {
+    margin-top: 15px;
+}
+
+.login .button:hover {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--rojo);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;    
+    text-decoration: none;
+}
+
+.login .button p:hover {
+    color: var(--crema);
+}
+
+.login .nuevaCuenta {
+    font-family: var(--titulos);
+    padding-bottom: 10px;
+    font-size: 20px;    
+}
+
+.login .background{
+        margin: 10px;
+        padding: 10px;
+        padding-bottom: 25px;
+        background-color: var(--crema);   
+        box-shadow: 0px 0px 25px 5px rgba(233, 78, 27, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+/*         font-family: var(--titulos); */
+        color: var(--bordo);
+        width: 80%;   
+        border-radius: 25px;
+    }
+
+    .login .warning{
+        color: var(--bordo);
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+
+    .login .recuerdame, .guardar{
+        cursor: pointer;
+    }
+
+@media (min-width: 481px){ 
+
+
+
+    .login .tamaño{
+        padding: 5px 25px;
+        width: 290px;
+    }
+
+}
+
+@media (min-width: 769px){ 
+
+    .login .cont-titulo{
+        border-bottom: solid 2px var(--rojo);
+
+    }
+    
+    .login .background{
+
+        width: 50%;   
+
+    }
+
+
+}

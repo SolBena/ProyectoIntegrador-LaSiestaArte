@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<title>Busqueda</title>
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <main class="products">
+                <% if (productos.length!=0) {%> 
+                <div class="tit-container">
+                    <h1 class="titulo">Resultados de tu busqueda: "<%= busqueda %>" </h1>
+                </div>
+
+                <section class="pdtos-container">
+
+                    <% productos.forEach(producto => { %>
+                        <article class="pdto">
+                            <div class="img-container">
+                                <div class="photo">
+                                    <a href="/products/detail/<%= producto.id  %>"> <img
+                                            src='/img/products/<%= producto.productosIm[0].nombre  %> ' width="100%"
+                                            alt="<%= producto.titulo  %>" /></a>
+                                </div>
+                            </div>
+                            <div class="description">
+                                <div class="categoria">
+                                    <h3 class="subt">
+                                        <%= producto.nombre %>
+                                    </h3>
+                                    <i class="fas fa-regular fa-heart"></i>
+                                </div>
+
+                                <h2 class="subtprecio">
+                                    $<%= producto.precio %>
+                                </h2>
+                                <p>
+                                    <%= producto.descripcion %>
+                                </p>
+                            </div>
+                        </article>
+                     <% }) %>
+                     
+                      <% } else {%>
+                        <div class="tit-container">
+                            <h1 class="titulo">No se encoto resltado para la busqueda: "<%= busqueda %>" </h1>
+                        </div>
+                        <% } %> 
+                </section>
+            </main>
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

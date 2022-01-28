@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+    <title>Edición de perfil</title>
+
+<body>
+    <%- include("../partials/header.ejs") %> 
+
+ <main class="register">
+     
+    <div class="background">
+ 
+
+    <div class="cont-titulo">
+        <h1 class="titulo">EDITA TUS DATOS</h1>
+    </div>
+
+    <form id="formUserEdit" class="formRegister" action="/users/Miperfil/edit/?_method=PUT " method="POST" enctype="multipart/form-data" >
+         
+        <div class="form-option">
+            <label for="Nombre" class="form-titulo">Nombre:</label><br>
+            <input class="tamaño" type="text" placeholder="ej: Ricardo" name="Nombre" value="<%= usuario.nombre %>"  > <br>
+            <small><%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %> </small> 
+            <small id="smallNombre"></small>
+        </div>
+
+        <div class="form-option">
+            <label for="Apellido" class="form-titulo">Apellido:</label><br>
+            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" value="<%= usuario.apellido %>"  > <br>
+            <small><%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %> </small> 
+            <small id="smallApellido"></small>
+        </div>
+
+        <div class="form-option" class="form-titulo">
+            <label for="telefono" class="form-titulo">Telefono:</label><br>
+            <input id="telefono" class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" name="telefono" value=<%= usuario.telefono %>  > <br>
+            <small><%= locals.errors && errors.telefono ? errors.telefono.msg : null %> </small>
+            <small id="smallTelefono"></small>   
+        </div>
+
+        <div class="form-option">
+        <label for="provincia" class="form-titulo">Provincia:</label><br>
+        <select id="provincia" name="provincia" class="tamaño" >
+        </select> <br>
+        <small><%= locals.errors && errors.provincia ? errors.provincia.msg : null %> </small>
+        </div>
+
+        <div class="form-option">
+            <label for="localidad" class="form-titulo">Localidad:</label><br>
+        <select id="localidad" name="localidad" class="tamaño">
+            
+        </select> <br>
+        <small><%= locals.errors && errors.localidad ? errors.localidad.msg : null %> </small>
+        </div>
+
+        <div class="form-option">
+            <label for="email" class="form-titulo">Correo electrónico:</label><br>
+            <input class="tamaño" type="email" placeholder="ej: Ricardo@gmail.com" name="email" value=<%= usuario.email %> readonly > <br>
+            <small><%= locals.errors && errors.email ? errors.email.msg : null %> </small>  
+            
+        </div>
+
+        <div class="form-option">
+            <label for="image" class="form-titulo">Imagen:</label><br>
+            <img id="img-preview" src="/img/users/<%= usuario.imagen %> " alt="">   
+            <input id="perfil" class="tam" type="file"  name="image">
+        </div>
+
+        <div class="botones">
+             <button class="guardar" type="submit">Guardar cambios</button>
+        </div>
+
+        <option id="userProv" value="<%= usuario.provincia %>"></option>
+        <option id="userLoc" value="<%= usuario.localidad %>"></option>
+
+    </form>
+
+</div>
+ </main>
+ <%- include("../partials/footer.ejs") %> 
+ <script src="/js/editUserValidation.js"></script>
+</body>
+</html>

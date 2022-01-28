@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+<title>La Siesta Arte</title>
+    <body class="body-home">
+        <%- include('../partials/header.ejs') %>
+
+            <!-- seccion home -->
+            <main class="home">
+
+                <!--  banner -->
+                <section class="banner"
+                    <!-- slider -->
+
+                    <div class="slider" id="main-slider"><!-- outermost container element -->
+                        <div class="slider-wrapper"><!-- innermost wrapper element -->
+                            <img src="/img/banner01.jpg" alt="First" class="slide" /><!-- slides -->
+                            <img src="/img/banner02.jpg" alt="Second" class="slide" />
+                            <img src="/img/Banner03.jpg" alt="Third" class="slide" />
+                        </div>
+                    </div>	
+
+                    <!-- fin slider -->
+
+                </section>
+                <!--  fin banner -->
+
+
+                <!-- sobre nosotras -->
+                <section class="nosotras">
+                    <div class="tit-container">
+                        <h2 class="titulo aboutus">SOBRE NOSOTRAS</h2>
+                    </div>
+                    <article class="info">
+                        <div class="video">
+                            <iframe width="100%" height="375px" src="https://www.youtube.com/embed/Lp7Egy_mG_M"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+
+            
+                <div class="text-container">
+                    <p>Somos Ana, Ailin y Paula, madre e hijas, y juntas queremos darle la bienvenida a nuestro
+                        portal de La Siesta Arte, nuestro emprendimiento de cerámica artesanal en Villa la
+                        Angostura, Patagonia Argentina. <br><br>
+                        ¡Nuestras piezas son muy diversas! Disfrutamos mucho distintas técnicas y nos inspira
+                        profundamente buscar diferentes lenguajes. <br>
+                        Saber que, en cada región del mundo, un pueblo tiene una técnica para el mismo material
+                        nos conecta profundamente con el proceso de crear piezas para nuestras cotidianidades
+                        que estén llenas de valor.
+                    </p>
+
+                    <a href="/about" class="button">
+                        <h4>Conocenos!</h4>
+                    </a>
+
+                </div>
+                
+                </section>
+                <!--         Termina sobre nosotras -->
+
+                <!-- Favoritos -->
+                <section class="favoritos">
+                    <div class="tit-container">
+                        <h2 class="titulo">FAVORITOS</h3>
+                    </div>
+
+                    <div class="fav-container">
+                        <% let contador=1 %>
+                            <% productos.forEach(favorito=>{%>
+                                <article class="fav-<%= contador %> ">
+                                    <div class="photo-prod">
+                                        <a href="/products/detail/<%= favorito.id %> "> <img
+                                                src='/img/products/<%= favorito.productosIm[0].nombre %> ' width="100%"
+                                                alt='<%= favorito.alt %> ' /></a>
+                                    </div>
+                                    <div class="description">
+                                        <div class="categoria">
+                                            <small>
+                                                <%= favorito.categoria %>
+                                            </small>
+                                            <i class="fas fa-regular fa-heart"></i>
+                                        </div>
+                                        <h3 class="subt">
+                                            <%= favorito.nombre %>
+                                        </h3>
+                                        <h2 class="subt precio">$<%= favorito.precio %>
+                                        </h2>
+                                        <p>
+                                            <%= favorito.descipcion %>
+                                        </p>
+                                    </div>
+                                </article>
+                                <% }) %>
+
+                    </div>
+                </section>
+                <!-- Termina Favoritos -->
+
+
+                <!-- Categorias -->
+                <section class="categorias">
+                    <div class="tit-container">
+                        <a href="/products/categorias/completas">
+                            <h2 class="titulo">CATEGORIAS</h2>
+                        </a>
+                    </div>
+
+                    <article class="sec-categorias">
+                        <!-- <div class="img-container"> -->
+                        <% categorias.forEach(categoria=>{%>
+                            <div class="img-container">
+                                
+                                <a href="/products/<%= categoria.href %> " class="titulo">
+                                    <img class="photo" src="/img/<%= categoria.img %> " width="100%"
+                                    alt="<%= categoria.alt %> ">
+                                </a>
+                            </div>
+                            <% }) %>
+
+                    </article>
+
+                </section>
+                <!-- Termina Categorias -->
+
+                <!-- Banner Personaliza tu taza -->
+
+                <!-- Termina Banner -->
+
+
+                <!-- seccion instagram -->
+
+             <section class="instagram">
+
+                    <div class="tit-container">
+                        <h2 class="titulo">SEGUINOS EN INSTAGRAM</h3>
+                    </div>
+                    <script src="https://snapwidget.com/js/snapwidget.js"></script>
+                    <iframe src="https://snapwidget.com/embed/980311" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe>
+                 <!--    <div class="posts">
+
+                    <div class="posteo01">
+                        <iframe src="https://www.instagram.com/p/CX57PpntBEP/embed" frameborder="0"></iframe>
+                    </div>
+
+                    <div class="posteo02">
+                        <iframe  src="https://www.instagram.com/p/CX57PpntBEP/embed" frameborder="0"></iframe>
+                    </div>
+
+                   <div class="posteo03">
+                        <iframe src="https://www.instagram.com/p/CX57PpntBEP/embed" frameborder="0"></iframe>
+                   </div>
+
+                    <div class="posteo04">
+                        <iframe src="https://www.instagram.com/p/CX57PpntBEP/embed" frameborder="0"></iframe>
+                    </div>
+                     
+                 </div>-->
+
+                </section> 
+                <!-- seccion instagram -->
+
+                <section class="map-container">
+                    <div class="tit-container">
+                        <h2 class="titulo">DONDE ENCONTRARNOS</h2>
+                    </div>
+                    <div class="direccion">
+                        <h3>Avenida Arrayanes 1368 <br>
+                            Villa la Angostura <br>
+                            Patagonia Argentina</h3>
+                    </div>
+                    <div class="mapa">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.778828121687!2d-71.62974418407576!3d-40.76688901646008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9610bffc90e4d727%3A0xe9f9c7f74ebbc0f5!2sLa%20siesta%20Arte!5e0!3m2!1ses!2sar!4v1630461257375!5m2!1ses!2sar"
+                            width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </section>
+
+            </main>
+
+            <!-- footer -->
+
+            <%- include('../partials/footer.ejs') %>
+
+    </body>
+    <script src="/js/sildeHome.js"></script>
+
+</html>

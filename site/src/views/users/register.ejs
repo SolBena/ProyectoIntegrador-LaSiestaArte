@@ -1,0 +1,157 @@
+<%- include("../partials/head.ejs") %>
+    <title>Registro</title>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+
+            <main class="register">
+
+
+                <div class="background">
+
+
+                    <div class="cont-titulo">
+                        <h1 class="titulo">CREA TU CUENTA</h1>
+                    </div>
+
+                    <form class="formRegister" action="" method="POST" enctype="multipart/form-data" id="formV">
+
+                        <div class="form-option">
+                            <label for="Nombre" class="form-titulo">Nombre:</label> <br>
+                            <input class="tamaño" type="text" placeholder="ej: Ricardo" id="Nombre" name="Nombre"
+                                value=<%=locals.old && old.Nombre? old.Nombre : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.Nombre ? errors.Nombre.msg : null %>
+                            </small>
+                            <small id="smallNombre"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="Apellido" class="form-titulo">Apellido:</label> <br>
+                            <input class="tamaño" type="text" placeholder="ej: Ford" name="Apellido" id="apellido"
+                                value=<%=locals.old && old.Apellido? old.Apellido : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.Apellido ? errors.Apellido.msg : null %>
+                            </small>
+                            <small id="smallApellido"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="teléfono" class="form-titulo">Telefono</label> <br>
+                            <input class="tamaño" maxlength="10" type="tel" placeholder="ej: 0112345678" id="telefono"
+                                name="telefono" value=<%=locals.old && old.telefono? old.telefono : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.telefono ? errors.telefono.msg : null %>
+                            </small>
+                            <small id="smallTelefono"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="provincia" class="form-titulo">Provincia:</label><br>
+                            <select id="provincia" name="provincia" class="tamaño">
+                                <option value="" <%=locals.old && old.provincia==="" ? "selected" : null %>
+                                    hidden>Seleccione tu provincia</option>
+                            </select> <br>
+                            <small>
+                                <%= locals.errors && errors.provincia ? errors.provincia.msg : null %>
+                            </small>
+                            <small id="smallProvincia"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="localidad" class="form-titulo">Localidad:</label><br>
+                            <select id="localidad" name="localidad" class="tamaño">
+                                <option value="" <%=locals.old && old.localidad==="" ? "selected" : null %>
+                                    hidden>Seleccione tu localidad</option>
+                            </select> <br>
+                            <small>
+                                <%= locals.errors && errors.localidad ? errors.localidad.msg : null %>
+                            </small> 
+                            <small id="smallLocalidad"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="email" class="form-titulo">Correo electrónico:</label> <br>
+                            <input class="tamaño" type="text" placeholder="ej: Ricardo@gmail.com" name="email"
+                                id="email" value=<%=locals.old && old.email? old.email : null %> > <br>
+                            <small>
+                                <%= locals.errors && errors.email ? errors.email.msg : null %>
+                            </small>
+                            <small id="smallEmail"></small>
+                        </div>
+
+                        <div class="contraseña form-option">
+
+                            <div class="pass-container">
+                                <label for="password" class="form-titulo">Contraseña:</label>
+                                <br>
+
+                                <input class="tamaño" type="password" placeholder="**********" name="password"
+                                    id="Password">
+                                <span class="icon-eye1">
+                                    <i id="icon1" class="fas fa-eye-slash"></i>
+                                </span>
+                                <br>
+                                <small>
+                                    <%= locals.errors && errors.password ? errors.password.msg : null %>
+                                </small>
+                                <small id="smallPassword"></small>
+
+                            </div>
+                        </div>
+
+                        <div class="contraseña form-option">
+                            <label for="password2" class="form-titulo">Confirmar contraseña:</label> <br>
+                            <div class="pass-container">
+                                <input class="tamaño" type="password" placeholder="**********" name="password2"
+                                    id="Password2">
+                                <span class="icon-eye2">
+                                    <i id="icon2" class="fas fa-eye-slash"></i>
+                                </span>
+                            </div>
+                           
+                            <small>
+                                <%= locals.errors && errors.password2 ? errors.password2.msg : null %>
+                            </small>
+                            <small id="smallPassword2"></small>
+                        </div>
+
+                        <!-- <div class="form-option"> -->
+                        <div class="img-usuario">
+                            <span class="form-option">
+                                <label for="product-img" class="form-titulo">Imagen</label> <br>
+
+                                <input class="tamaño" type="file" id="product-img" name="image"
+                                    accept=".png, .jpg, .jpeg">
+                                <br>
+                                <small>
+                                    <%= locals.errors && errors.image ? errors.image.msg : null %>
+                                </small>
+                                <small id="smallImage"></small>
+                            </span>
+
+
+                            <img id="img-preview" src="/img/users/userDefault.jpeg" alt="">
+
+                            <div class="imagen" id="nombre-imagen">
+                                <p>Imagen por defecto </p>
+                            </div>
+                        </div>
+
+                        <div class="botones">
+
+                            <button class="guardar" type="submit">Crear cuenta</button>
+                        </div>
+                        <p class="nuevaCuenta"> ¿Ya tenés una cuenta?</p>
+                        <a href="/users/login" class="button">
+                            <p>¡Ingresá desde acá!</p>
+                        </a>
+
+                    </form>
+                </div>
+
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+    <script src="/js/registerValidation.js"></script>
+    <script src="/js/register.js"></script>

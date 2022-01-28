@@ -1,0 +1,168 @@
+.usuarios {
+
+    font-family: var(--subtitulos);
+    background-image: url("../img/background.jpg");
+    width: 100%;
+    justify-content: center;
+}
+
+.usuarios main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuarios .titulo{
+    font-family: var(--titulos);
+    text-align: center;
+    color: var(--rojo);
+margin: 10px 30px;
+}
+
+.usuarios .container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.usuarios .tit-container{
+    border-bottom: solid 2px var(--rojo);
+}
+
+.usuarios .img-container{
+    width: 50%;
+}
+
+.usuarios .foto{
+    width: 50%;
+    margin: 0 auto;
+}
+
+.usuarios .datos h3 {
+    color: var(--rojo);
+}
+
+.usuarios .datos{
+    width: 45%;
+    margin-bottom: 30px;
+}
+
+.usuarios .datos  .a{
+    margin-top: 10px;
+    margin-bottom: 5px; 
+    font-weight: bold;
+    font-family: var(--subtitulos);
+    color: var(--bordo);
+    
+    }
+    
+    .usuarios .datos  .b{
+    padding: 5px 10px;    
+    border-radius: 10px;  
+    background-color: var(--crema);
+    border: 1px solid var(--rojo);
+    font-family: var(--subtitulos);
+    font-size: 14px;
+    cursor: pointer;   
+    color: var(--bordo); 
+        }
+
+.usuarios img.perfil{
+    border-radius: 50%;
+}
+
+.usuarios h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.usuarios form p{
+margin-top: 20px;
+margin-bottom: 20px; 
+width: 50%;  
+font-weight: bold;
+padding-bottom: 20px;
+
+}
+
+
+
+.usuarios form.form{
+    width: 80%;
+  display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+} 
+
+
+
+
+/* .usuarios .boton{
+    border: none;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.usuarios button.guardar, .usuarios button.foto_perfil {
+    border: none;
+    color: var(--crema);
+    padding: 9px;
+    border-radius: 50px;
+    background-color: var(--rojo);
+    font-family: var(--textos);
+    margin-bottom: 70px;
+}
+*/
+.usuarios .button p {
+    padding: 10px 15px;
+    font-family: var(--subtitulos);
+    font-size: 16px;
+    
+} 
+
+.usuarios .button {
+    border: solid 2px var(--rojo);
+    color: var(--rojo);
+    background-color: var(--crema);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.usuarios .button:hover {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--rojo);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;    
+    text-decoration: none;
+}
+
+.usuarios .button p:hover {
+    color: var(--crema);
+}
+
+@media (min-width: 481px){ 
+    
+}
+
+
+@media (min-width: 769px){ 
+    .usuarios button.guardar, .usuarios button.foto_perfil {
+        padding-top: 15px;
+    }
+    .usuarios .container{
+        flex-direction: row;
+    }
+}

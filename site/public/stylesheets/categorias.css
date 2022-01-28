@@ -1,0 +1,95 @@
+.banio {
+    background-image: url("../img/background.jpg");
+    font-family: var(--textos);
+}
+
+.banio .titulo{
+    font-family: var(--titulos);
+    text-align: center;
+    color: var(--rojo);
+    margin-top: 15px;
+    }
+
+.banio .tit-container {
+        padding-bottom: 7px;
+        border-bottom: solid 2px var(--rojo);
+        margin: 20px;
+}
+
+.banio .categoria .name {
+    font-family: var(--subtitulos);
+    color: var(--rojo);
+}
+
+.banio .categoria i {
+color: var(--rojo);
+}
+
+.banio .pdtos .img-container {
+    width: 100%;
+    
+}
+
+.banio .pdtos-container .photo img {
+    border-radius: 15px;
+}
+
+.banio .pdtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.banio .pdtos-container .pdto1,  .banio .pdtos-container .pdto2,  .banio .pdtos-container .pdto3,  .banio .pdtos-container .pdto4 {
+    width: 45%;
+    background-color: var(--crema);
+    border-radius: 15px;
+    padding: 10px;
+  /*   box-shadow: 0px 0px 15px rgba(0,0,0,0.5); */
+    border: solid 2px var(--rojo);
+
+}
+
+.banio .pdto1:hover{
+    box-shadow: 0px 0px 15px var(--bordo);
+}
+
+.banio .pdto2:hover{
+    box-shadow: 0px 0px 15px var(--bordo);
+}
+
+.banio .pdto3:hover{
+    box-shadow: 0px 0px 15px var(--bordo);
+}
+
+.banio .pdto4:hover{
+    box-shadow: 0px 0px 15px var(--bordo);
+}
+
+.banio .subtprecio {
+    font-family: var(--subtitulos);
+    color: var(--bordo);
+}
+
+    /* desktop------------- */
+
+    @media (min-width:769px) {
+        
+    .banio .pdtos-container {
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .banio .pdtos-container .pdto1,  .banio .pdtos-container .pdto2,  .banio .pdtos-container .pdto3,  .banio .pdtos-container .pdto4 {
+        width: 20%;
+    }
+
+
+    }

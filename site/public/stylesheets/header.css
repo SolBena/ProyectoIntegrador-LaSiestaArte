@@ -1,0 +1,371 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ .header .menu-pc, .header .menupc-navbar {
+    display: none;
+} 
+
+.header .menu-rp {
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.header .menu-rp .user-menu {
+    padding: 20px;
+}
+
+.header .icon-menu{
+    margin: 15px 35px; 
+    position: relative;
+    z-index: 10;
+    
+}
+.header .icon-menu small{
+    vertical-align: top;
+    width: 40px;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 5px;
+    border-radius: 7px;
+    color: var(--crema);
+}
+.header .cont-menu{
+    background-color: var(--bordo);
+  /*   box-shadow: 2px 0px 5px 2px rgb(66,66,66); */
+    width: 360px;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .6s ease;
+    z-index: 50;
+} 
+.header .cont-menu ul{
+    margin-left: 25px;
+    margin-right: 50px;
+    color: var(--crema);
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10 px 50px;
+    cursor: pointer;
+}
+
+.header .cont-menu ul .menu-option {
+margin-top: 10px;
+border-bottom: 1px solid var(--crema);
+font-family: var(--tiulos);
+}
+
+.header .cont-menu ul li:hover{
+    background-color: var(--rojo);
+
+}
+/* estilos de js */
+.header .active {
+    transform: translate(-600px);
+    transition: all .6s ease;
+}
+.header .opacity{
+    background-color: var(--bordo);
+    transition: all .6s ease;
+}
+.header a{
+    font-family: var(--titulos);
+}
+
+/* .header {
+    display: flex;
+    justify-content: center;
+   background-color: var(--bordo);
+} */
+
+.header li, .footer li{
+    list-style: none;
+}
+.header a, footer a{
+    text-decoration: none;
+    color: var(--crema);
+}
+
+.header .cerrarSesion {
+    font-family: var(--subtitulos);
+    color: var(--amarillo);
+    background-color: var(--bordo);
+    border: none;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: var(--bordo) ;
+    width: 100%;
+    height: 95px;
+    padding-top: 10px; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header div.imgConteiner{
+    width: 70%;
+}
+
+
+.header .logo {
+    display: block;
+    width: 140px;
+}
+
+.header a.linkLogo{
+    display: block;
+    width: 140px;
+    margin-left: 15px;
+}
+
+
+.header a.carrito{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+}
+
+
+.header .user{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--crema);
+}
+
+
+
+/* MENU HAMBURGUESA */
+.header input.menu{
+    display: none ;
+}
+
+.header nav ul{
+    display: none;
+}
+
+.header label {
+    display: block;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.header .menuBttn{
+    display: flex;
+    align-items: center;
+    width: 10%;
+}
+
+/* .header div.menuBttn input:checked ~ nav.options ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+} */
+
+.header .searchBar{
+    width: 100%;
+}
+
+
+.header .search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: .5px 20px;
+    flex-wrap: wrap;
+}
+.header .search input{
+    flex-grow: 2;
+    width: 80%;
+    border-radius:0 10px 10px 0;
+    margin-bottom: 10px;
+    border: none;
+}
+.header .search .searchBttn{
+        width: 20px;
+        height: 16px;
+        background-color: white;
+        border: none;
+        border-radius: 10px 0 0 10px;    
+}
+
+.header .search i.fas{
+    font-size: 80%;
+}
+
+.header .esquina {
+    display: none;
+}
+
+
+/* estilos buscador en tiempo real */
+.header .buscador{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: var(--bordo);
+    justify-content: center;
+    z-index: 1;
+}
+
+.header .divEncontrado{
+    display: flex;
+    align-items: center;
+}
+
+.header .divEncontrado:hover{
+    background-color: var(--amarillo);
+}
+
+.header .imgEncontrado{
+    width: 20%;
+}
+
+
+
+@media (min-width: 481px){
+
+    /* HEADER */
+
+/* .header .menu-pc {
+    display: none;
+} */
+    .header{
+        height: 145PX;
+    }
+
+
+    .header img.logo, .header a.linkLogo{
+        width: 250px;
+    }
+
+    .header a.carrito .fas{
+        font-size: 30px;
+    }
+
+    .header label.hamburguesa{
+        font-size: 30px;
+    }
+
+    .header .search input{
+        height: 27px;
+    }
+
+    .header .search .searchBttn{
+        height: 27px;
+        width: 20px;
+    } 
+
+}
+
+
+
+@media (min-width:769px){
+
+
+
+    .header .esquina {
+        width: 17%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .header .esquina .user-menuPC {
+        padding: 20px;
+    }
+
+.header .menu-rp {
+    display: none;
+}
+/*     .header {
+        margin-top: 10px;
+    } */
+
+
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+    }
+
+
+/*   .user{
+        display: none;
+    } 
+    .user1{
+        display: block;
+    } */
+
+    .header .icon-menu{
+        display: none;
+    }
+    .header .cont-menu{
+    display: none;
+    }
+
+  /*   .header div.menuBttn{
+        width: 70%;
+        align-items: center;
+        padding-bottom: 18px;
+    } */
+
+    .header .menupc-navbar{
+        display: block;
+        width: 70%;
+    }
+
+    .header .menupc-navbar ul {
+        display: flex;
+        width: 100%;
+    }
+    
+    .header .menupc-navbar li {
+        width: 24%;
+        text-align: center;
+    }
+
+    .header label {
+        display: none;
+    }
+
+    .header div.searchBar{
+        width: 30%;
+
+    }
+    .header form.search{
+        position: absolute;
+        margin-top: -15px;
+        width: 30%;
+    }
+    
+
+}
+
+@media (min-width: 1199px){
+
+        .header {
+           padding: 0 75px;
+           height: 200px;
+        }
+    
+}

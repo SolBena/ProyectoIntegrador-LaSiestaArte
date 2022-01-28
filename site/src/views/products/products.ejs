@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<title>Productos</title>
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <main class="products">
+
+                <div class="tit-container">
+                    <h1 class="titulo">Todos nuestros productos</h1>
+                </div>
+
+                <div class="container">
+                    <aside>
+                        <div>
+                            <label for="categoria" class="select">FILTRAR POR</label> <br>
+                            <select name="categoria" class="filtros" id="categorias">
+                                <option value="default" selected hidden>Seleccione la categoría</option>
+                                <% categorias.forEach(categorias=>{%>
+                                    <option value="<%= categorias.id %>" ><%= categorias.nombre %> </option>
+                                <% }) %>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="categoria" class="select">ORDENAR POR</label> <br>
+                            <select name="categoria" class="filtros" id="orden">
+                                <option value="default" selected hidden>Seleccione un parámetro</option>
+                                <option value="asc">Precio menor a mayor</option>
+                                <option value="desc">Precio mayor a menor</option>
+                                <option value="a-z">A - Z</option>
+                                <option value="z-a">Z - A</option>
+                            </select>
+                        </div>
+                    </aside>
+                    
+                    
+                    
+                    <section class="pdtos-container" id="pdtos-container">
+                    
+                        <% productos.forEach(producto => { %>
+                            <article class="pdto">
+                                <div class="img-container">
+                                    <div class="photo">
+                                        <a href="/products/detail/<%= producto.id  %>"> <img
+                                                src='/img/products/<%= producto.productosIm[0].nombre  %> ' width="100%"
+                                                alt="<%= producto.titulo  %>" /></a>
+                                    </div>
+                                </div>
+                                <div class="description">
+                                    <div class="categoria">
+                                        <h3 class="subt">
+                                            <%= producto.nombre %>
+                                        </h3>
+                                        <i class="fas fa-regular fa-heart"></i>
+                                    </div>
+                    
+                                    <h2 class="subtprecio">
+                                        $<%= producto.precio %>
+                                    </h2>
+                                    <p>
+                                        <%= producto.categoriasPr.nombre %>
+                                    </p>
+                                </div>
+                            </article>
+                         <% }) %>
+                    
+                    </section>
+                </div>
+            </main>
+            <%- include('../partials/footer.ejs') %>
+    </body>
+<script src="/js/productsFilter.js"></script>
+</html>

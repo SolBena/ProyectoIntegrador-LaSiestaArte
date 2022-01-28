@@ -1,0 +1,12 @@
+
+ 
+<% relacionados.forEach(relacionado=>{%>
+    
+        <div class="prodRelac">
+            <a href="/products/detail/<%= relacionado.id %> "><img  src="/img/products/<%= relacionado.productosIm[0].nombre %> " alt="<%= relacionado.titulo %> "></a>
+            <h4><%= relacionado.nombre %> </h4>
+            <p>$<%= relacionado.precio %> </p>                
+        </div>
+        
+    
+<% }) %>

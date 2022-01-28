@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include("../partials/head.ejs") %>
+<title>Crear producto</title>
+
+    <body>
+
+        <%- include("../partials/header.ejs") %>
+
+            <main class="create">
+
+                <div class="background">
+
+                    <div class="cont-titulo">
+                        <h1 class="titulo">CREA UN PRODUCTO NUEVO</h1>
+                    </div>
+                    <form class="createForm" id="createForm" action="/admin/create" method="POST"
+                        enctype="multipart/form-data">
+
+                        <div class="form-option">
+                            <label for="titulo" class="form-titulo">Nombre:</label><br>
+                            <input class="tamaño" type="text" id="titulo" name="titulo"
+                                value="<%= locals.old && old.titulo ? old.titulo : null %> ">
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.titulo ? errors.titulo.msg : null %>
+                            </small>
+                            <small id="smallTitulo"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="precio" class="form-titulo">Precio:</label><br>
+                            <input class="tamaño" type="number" id="precio" name="precio"
+                                value="<%= locals.old && old.precio ? old.precio : null %> ">
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.precio ? errors.precio.msg : null %>
+                            </small>
+                            <small id="smallPrecio"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="categoria" class="form-titulo">Categoría:</label><br>
+                            <select name="categoria" class="tamaño" id="categorias">
+                                <option selected hidden>Seleccione la categoría</option>
+                                <% categorias.forEach(categorias=>{%>
+                                    <option value="<%= categorias.id %>">
+                                        <%= categorias.nombre %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.categoria ? errors.categoria.msg : null %>
+                            </small>
+                            <small id="smallCategorias"></small>
+                        </div>
+
+
+
+                        <div class="form-option">
+                            <label for="descripcion" class="form-titulo">Descripción:</label><br>
+                            <textarea class="tamaño-desc" name="descripcion" id="descripcion" cols="30" rows="10"
+                                value="<%= locals.old && old.descripcion ? old.descripcion : null %> "></textarea>
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.descripcion ? errors.descripcion.msg : null %>
+                            </small>
+                            <small id="smallDescripcion"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="image" class="form-titulo">Imagen</label><br>
+                            <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" multiple> <br>
+                            <small>
+                                <%= locals.errors && errors.image ? errors.image.msg : null %>
+                            </small>
+                            <small id="smallImage"></small>
+                        </div>
+                        <div class="img-preview-container" id="img-preview-container">
+
+                        </div>
+
+                        <div class="botones">
+                            <button type="submit" class="crear">
+                                Crear
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
+    <script src="/js/productValidate.js"> </script>
+    <script src="/js/imagesProducts.js"></script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+    <title>Detalle de producto</title>
+<body>
+
+    <%- include("../partials/header.ejs") %> 
+
+    <main class="detalle-producto">
+        <div class="tit-container">
+            <h2 class="titulo"><%= producto.nombre%> </h2>
+        </div>
+
+        <!-- En esta parte se muestra todo lo referido al producto como fotos, descripcion, etc. -->
+        <section class="producto">
+            <article class="fotos">
+                <div class="img-principal">
+                    <!-- <button class='left'>
+                        <i class="fas fa-solid fa-angle-left"></i>
+                    </button> -->
+                    <img src="/img/products/<%= producto.productosIm[0].nombre %> " alt="img0" id="img0" class="principal">
+                    <!-- <button class="right">
+                        <i class="fas fa-solid fa-angle-right"></i>
+                    </button> -->
+                </div>
+                <div class="miniaturas">
+                    <div class="img-secundaria">
+                        <!-- <img  src="/img/taza01-a.jpg" alt="Imagen miniatura 01">
+                        <img  src="/img/taza01-b.jpg" alt="Imagen miniatura 02">
+                        <img  src="/img/taza01-c.jpg" alt="Imagen miniatura 03"> -->
+                        <% if(producto.productosIm.length>0 && producto.productosIm.length<4 ){ %>
+                            <% for (let i=0; i<producto.productosIm.length;i++){ %>
+                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="<%= producto.productosIm[i].nombre %> " class="imgAlt" id="img<%=[i]%>">
+                            <% }  %>  
+                        <% } else { %> 
+                            <% for (let i=0; i<3;i++){ %>
+                                <img src="/img/products/<%= producto.productosIm[i].nombre %> " alt="<%= producto.productosIm[i].nombre %> " class="imgAlt" id="img<%=[i]%>">
+                            <% }  %>
+                        <% } %>   
+                    </div>
+                </div>
+            </article>    
+
+            <article class="descripcion">
+                <h2>$<%= producto.precio %> </h2>
+                <h4><%= producto.descripcion %></h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad consequuntur tenetur illo ex delectus, quod dolorum.</p>
+                <div class="cantidad">
+                    <h4>Cantidad</h4>
+                    <div>
+                    <input class="agregarRestar" type="button" value="-">
+                    <input type="number" value="1">
+                    <input class="agregarRestar" type="button" value="+">
+                    </div>
+                </div>
+                <div class="botones">
+                    <input class="agregar" type="button" value="Agregar al carrito">
+                    <a href="/products/carrito">
+                        <input class="comprar" type="button" value="Comprar">
+                    </a>
+                </div>
+            </article>
+        </section>
+        
+        <!-- En esta sección se encuentran los productos relacionados para el usuario -->
+        <section class="relacionado">
+            <div class="tit-container">
+                <h2 class="titulo">Te puede interesar:</h2>
+            </div>
+            <article>
+                <%- include("../partials/relacionados.ejs") %> 
+            </article>
+        </section>
+    </main>
+
+
+    <%- include("../partials/footer.ejs") %> 
+</body>
+<script src="/js/productDetail.js"></script>
+</html>

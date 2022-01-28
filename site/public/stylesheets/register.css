@@ -1,0 +1,271 @@
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--subtitulos);
+    background-image: url("../img/background.jpg");
+    width: 100%;
+}
+
+.register .titulo {
+    font-family: var(--titulos);
+    text-align: center;
+    color: var(--rojo);
+    margin-top: 35px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+
+.register .cont-titulo {
+    margin-bottom: 20px;
+}
+
+
+.register img {
+    width: 50% ;
+}
+
+.register .img-usuario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.register .form-titulo{
+/*     display: flex;
+    justify-content: left; */
+    color: var(--bordo);
+    font-weight: bold;
+    font-family: var(--subtitulos);
+    margin-top: 5px;
+}
+
+.register .tamaño{
+    border-radius: 10px;
+    border: solid 1px var(--rojo);
+    background-color: var(--crema);
+    height: 23px;
+    width: 255px;
+}
+
+
+/* .register .tamaño-desc{
+    border-radius: 3%;
+    border: solid 2px var(--rojo);
+    height: 90px;
+    width: 310px;
+} */
+
+.register .boton {
+    border: none;
+    color: white;
+    width: 110px;
+    padding: 9px;
+    border-radius: 10px;
+    background-color: var(--rojo);
+    font-family: var(--textos);
+}
+
+.register .botonContenedor{
+    border: none;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.register .formRegister{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px auto;
+}
+
+/* .register .formRegister .form-titulo{
+       display: flex;
+    align-items: center;
+    flex-direction: column;
+} */
+
+.register .background{
+    margin: 10px;
+    padding: 10px;
+    padding-bottom: 25px;
+    background-color: var(--crema);   
+    box-shadow: 0px 0px 25px 5px rgba(233, 78, 27, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    font-family: var(--titulos);
+    color: var(--bordo);
+    width: 80%;   
+    border-radius: 25px;
+}
+
+.register .formRegister .form-option {
+    margin-top: 10px;
+}
+
+/* js validation  */
+.register .is-invalid{
+    border: solid 3px var(--rojo);
+    background-color: var(--crema);
+}
+
+.register .is-valid{
+    border: solid 3px var(--verde);
+    background-color: var(--crema);
+}
+
+.register .is-validSmall{
+/*     border: solid 1px var(--verde); */
+    margin-left: 10px;
+    
+    color: var(--amarillo);
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos)
+}
+
+.register .is-invalidSmall{
+    /* border: solid 1px var(--rojo); */
+    margin-left: 10px;
+    color: var(--rojo);;
+    padding: 1px;
+    border-radius: 5px;
+    font-family: var(--textos);
+}
+
+.register #img-preview{
+    border-radius: 20%;
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin: 20px;
+}
+
+/* .register #nombre-imagen {
+    color: var(--bordo);
+} */
+
+ .register .contraseña {
+    position: relative;
+} 
+
+.register input::placeholder{
+    font-family: var(--subtitulos);
+}
+
+.register .icon-eye1{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(5%);
+    cursor: pointer;
+    transition: .2s ease all;
+}
+
+/* .register .pass-container {
+    display: flex;
+
+} */
+
+.register .icon-eye1:hover{
+    color: var(--bordo);
+}
+
+.register .icon-eye2{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(5%);
+    cursor: pointer;
+    transition: .2s ease all;
+} 
+
+.register .icon-eye2:hover{
+    color: var(--bordo);
+}
+
+.register .button p {
+    padding: 10px 15px;
+    font-family: var(--subtitulos);
+}
+
+
+.register .form-option input::placeholder {
+    font-family: var(--subtitulos);
+    color: var(--bordo);
+    padding-left: 5px;
+}
+.register .button {
+    border: solid 2px var(--rojo);
+    color: var(--rojo);
+    background-color: var(--crema);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.register .button:hover {
+    border: solid 2px var(--rojo);
+    color: var(--crema);
+    background-color: var(--rojo);
+    border-radius: 50px;
+    font-family: var(--subtitulos);
+    font-size: 20px;
+    text-align: center;    
+    text-decoration: none;
+}
+
+.register .imagen {
+    display: flex;
+    justify-content: center;
+}
+
+.register .button p:hover {
+    color: var(--crema);
+}
+
+.register .nuevaCuenta {
+    font-family: var(--titulos);
+    padding-bottom: 10px;
+    font-size: 20px;    
+}
+
+@media (min-width: 481px){ 
+
+    .register .cont-titulo{
+        border-bottom: solid 2px var(--rojo);
+
+    } 
+    .register .tamaño{
+        height: 26px;
+        width: 290px;
+    }
+    .register .background{
+        width: 384px;
+    }
+}
+@media (min-width: 769px){ 
+
+    .register .botonContenedor {
+        padding-top: 15px;
+    }
+    .register .tamaño{
+        height: 32px;
+        width: 400px;
+    }
+    .register .background{
+        width: 50%;
+    }
+}

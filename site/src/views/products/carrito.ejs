@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %> 
+    <title>Carrito</title>
+<body>
+
+    <%- include("../partials/header.ejs") %> 
+
+
+    <main class="carrito">
+        <section class="detalleCarrito">
+        <div class="tit-container">
+            <h2 class="titulo">Detalle del carrito</h2> 
+        </div>
+            <% productos.forEach(relacionado=>{%>
+                <article>
+                    <div class="product">
+                        <h4> Producto</h4>
+                        <div>
+                            <img src="/img/products/<%= relacionado.productosIm[0].nombre %> " alt="">
+                        </div>
+                    </div>
+                    <div class="precio">
+                        <h4>Precio</h4>
+                        <p><%= relacionado.precio %> </p>
+                    </div>
+                    <div class="cantidad">
+                        <h4>Cantidad</h4>
+                        <div>
+                        <input class="agregarRestar" type="button" value="-">
+                        <input type="number" value="1">
+                        <input class="agregarRestar" type="button" value="+">
+                        </div>
+                    </div>
+                    <div>
+                        <h4>Subtotal</h4>
+                        <p>$xx.xxx</p>
+                    </div>
+                    <div class="eliminar">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                </article>
+            <% }) %>  
+        </section>
+
+        <section class="total">
+            <div class="tit-container">
+                <h2 class="titulo">Total del carrito</h2>
+            </div>
+            <article>
+                <h4>Subtotal</h4>
+                <p>$xx.xxx</p>
+            </article>
+            <article>
+                <h4>Envío</h4>
+                <input type="button" value="Calcular envío">
+            </article>
+            <article>
+                <h4>Total</h4>
+                <p>$xxx.xxx</p>
+            </article>
+        </section>
+
+        <!-- Acá se ubican los botones para seguir o finalizar la compra. -->
+        <div class="botones">
+            <input class="seguir" type="button" value="Seguir comprando">
+            <input class="comprar" type="button" value="Finalizar compra">
+        </div>
+
+        <!-- Acá se muestran los productos recomendados para el usuario. -->
+
+        <section class="relacionado">
+            <div class="tit-container">
+                <h2 class="titulo">Te puede interesar:</h2>
+            </div>
+            <article> 
+                <%- include("../partials/relacionados.ejs") %> 
+            </article>
+        </section>
+    </main>
+
+    <%- include("../partials/footer.ejs") %> 
+</body>
+</html>

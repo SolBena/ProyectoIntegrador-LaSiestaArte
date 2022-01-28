@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head.ejs") %>
+<title>Contacto</title>
+    <body class="contacto">
+        <%- include("../partials/header.ejs") %>
+
+
+
+            <main class="contacto-main">
+
+                <section class="formulario-contacto">
+
+                    <div class="container">
+
+                      <div class="cont-titulo">
+                            <h1 class="titulo">¡CONTACTANOS!</h1>
+                        </div> 
+
+                        <form class="form-contacto" action="https://formsubmit.co/sol.benavides95@gmail.com"
+                            method="POST">
+
+                            <div class="fila">
+                                <label class="form-titulo" for="name">Nombre</label> <br>
+                                <input type="text" id="name" class="texto" name="firstname" placeholder="Nombre">
+                            </div>
+
+                            <div class="fila">
+                                <label class="form-titulo" for="apellido">Apellido</label><br>
+                                <input type="text" id="apellido" class="texto" name="lastname" placeholder="Apellido">
+                            </div>
+
+                            <div class="fila">
+                                <label class="form-titulo" for="email">Email</label><br>
+                                <input id="email" class="texto" type="text" placeholder="usuario@gmail.com"
+                                    name="email">
+                            </div>
+
+                            <div class="fila">
+                                <label class="form-titulo" for="subject">Asunto</label><br>
+                                <textarea id="subject" class="texto" name="subject" placeholder="Escribi tu consulta"
+                                    style="height:200px"></textarea>
+                            </div>
+
+                            <div class="boton">
+                                <input class="btn" type="submit"></input>
+                            </div>
+
+                        </form>
+
+                    </div>
+                    
+                </section>
+
+                <section class="map">
+
+                    <div class="map-container">
+
+                        <div class="cont-titulo">
+                            <h2 class="titulo">DONDE ENCONTRARNOS</h2>
+                        </div>
+
+                        <div class="direccion">
+                            <h3>Avenida Arrayanes 1368</h3>
+                            <h3>Villa la Angostura</h3>
+                            <h3>Patagonia Argentina</h3>
+                        </div>
+
+                        <div class="mapa">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.778828121687!2d-71.62974418407576!3d-40.76688901646008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9610bffc90e4d727%3A0xe9f9c7f74ebbc0f5!2sLa%20siesta%20Arte!5e0!3m2!1ses!2sar!4v1630461257375!5m2!1ses!2sar"
+                                width="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
+</html>

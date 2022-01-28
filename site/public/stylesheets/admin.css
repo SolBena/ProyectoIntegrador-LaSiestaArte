@@ -1,0 +1,151 @@
+body {
+    background-image: url("../img/background.jpg");
+}
+
+a{
+    color: black
+}    
+h2, h3{
+    font-family: var(--titulos);
+    color: var(--bordo);
+}
+main .titulo{
+    font-family: var(--titulos);
+    text-align: center;
+    color: var(--bordo);
+    margin-top: 15px;
+}
+.tit-container {
+    padding-bottom: 7px;
+    border-bottom: solid 2px var(--bordo);
+    margin: 20px;
+}    
+h4{
+    font-family: var(--subtitulos);
+}
+p, input{
+    font-family: var(--textos);
+}
+p{
+    color: var(--rojo);
+}
+body{
+    background-color: var(--crema);
+}
+main{
+    margin: 30px auto;
+}
+.admin img{
+    border: 2px solid var(--bordo);
+    border-radius: 5px;
+}
+.admin article img{
+    width: 60px;
+    height: 90px;
+}
+.admin article{
+    margin: 20px 30px;
+}
+.admin section article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.admin .listado article{
+    margin: 25px 3%;
+}
+.admin .listado input{
+    background-color: var(--crema);
+    color: var(--bordo);
+    border: 1px solid var(--crema);
+    border-radius: 50%;
+}
+.admin section .product{
+    display: flex;
+    width: 60px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.admin .botones{
+    display: flex;
+    justify-content: center;
+}
+.botones .crear{
+    width: 220px;
+    height: 50px;
+    font-size: 18px;
+    margin: 20px 10px;
+    padding: 5px;
+    color: var(--crema);
+    background-color: var(--amarillo);
+    border: 2px solid var(--rojo);
+    border-radius: 20px;
+}
+.botones .guardar{
+    width: 180px;
+    height: 40px;
+    font-size: 15px;
+    margin: 20px 10px;
+    padding: 5px;
+    color: var(--crema);
+    background-color: var(--rojo);
+    border: 2px solid var(--rojo);
+    border-radius: 20px;
+}
+.botones input:hover{
+    background-color: var(--rojo);
+    transform: scale(1.15);
+    color: var(--crema);
+}
+.admin .precio, .admin .categoria{
+    display: none;
+}
+.admin .eliminar, .admin .editar{
+    position: relative;
+    top: 25px;
+    right: 15px;
+    padding: 5px;
+}
+.admin .eliminar:hover{
+    color:var(--bordo);
+}
+.admin .editar:hover{
+    color:var(--verde);
+}
+.admin .botones-admin{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Tablet */
+
+@media (min-width:481px) {
+    .admin .precio{
+        display:block;
+    }
+    .admin .eliminar, .admin .editar{
+        padding: 10px;
+    }
+    .admin article img{
+        width: 80px;
+        height: 115px;
+    }
+
+}
+
+/* Desktop */
+
+@media (min-width:768px) {
+    .admin .categoria{
+        display:block;
+    }
+    .admin article img{
+        width: 100px;
+        height: 140px;
+    }
+    .admin .eliminar, .admin .editar{
+        padding: 15px;
+    }
+
+}

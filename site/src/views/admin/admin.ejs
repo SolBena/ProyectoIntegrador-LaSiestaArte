@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+    <%- include("../partials/head.ejs")  %>    
+     <title>Administrador</title>
+<body>
+
+    <%- include("../partials/header.ejs") %> 
+
+    <main class="admin">
+        
+        <div class="botones">
+            <a href="/admin/create">
+                <input class="crear" type="button" value="Agrega un producto">
+            </a>
+        </div>
+
+        <section class="listado">
+        <div class="tit-container">
+            <h2 class="titulo">↓ Estos son los productos existentes ↓</h2> 
+        </div>
+            <% productos.forEach(producto=>{%>
+                <article>
+                    <div class="product">
+                        <h4> Imagen</h4>
+                        <a href="/products/detail/<%= producto.id %> ">
+                            <img src="/img/products/<%= producto.productosIm[0].nombre %> " alt="">
+                        </a>
+                    </div>
+                    
+                    <div class="product">
+                        <h4> Nombre</h4>
+                        <div>
+                            <p><%= producto.nombre %></p>
+                        </div>
+                    </div>
+
+                    <div class="precio">
+                        <div class="product">
+                            <h4>Precio</h4>
+                            <p>$<%= producto.precio %> </p>
+                        </div>
+                    </div>
+                    
+                    <div class="categoria">
+                        <div class="product">
+                            <h4>Categoría</h4>
+                            <p><%= producto.categoriasPr.nombre %> </p>
+                        </div>
+                    </div>
+
+                    <div class="botones-admin">
+                        <a href="/admin/edit/<%= producto.id %> ">
+                            <div class="editar">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                        </a>
+                        
+                        <form class="eliminar" action="/admin/delete/<%= producto.id %>?_method=DELETE" method="POST">
+                            <button class="borrar" type="submit"><i class="fas fa-trash-alt"></i></button>
+                        </form>
+                    </div>
+                </article>
+            <% }) %>  
+        </section>
+
+    </main>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/sweetAlert.js"></script>
+
+    <%- include("../partials/footer.ejs") %> 
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include("../partials/head.ejs") %>
+    <title>Editar producto</title>
+
+    <body>
+        <%- include("../partials/header.ejs") %>
+
+            <main class="edit">
+
+
+                <div class="background">
+
+                    <div class="cont-titulo">
+                        <h1 class="titulo">Editando: <%= productEdit.nombre%>
+                        </h1>
+                    </div>
+
+                    <form class="formEdit" action="/admin/edit/<%= productEdit.id %>?_method=PUT" method="POST"
+                        enctype="multipart/form-data">
+
+                        <div class="form-option">
+                            <label for="titulo" class="form-titulo">Nombre:</label>
+                            <input class="tamaño" type="text" id="titulo" name="titulo"
+                                value="<%= productEdit.nombre %>">
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.titulo ? errors.titulo.msg : null %>
+                            </small>
+                            <small class="validation" id="smallTitulo"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="precio" class="form-titulo">Precio</label>
+                            <input class="tamaño" type="number" id="precio" name="precio"
+                                value="<%= productEdit.precio %>">
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.precio ? errors.precio.msg : null %>
+                            </small>
+                            <small class="validation" id="smallPrecio"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="categoria" class="form-titulo">Categoría:</label>
+                            <select name="categoria" class="tamaño">
+                                <option selected hidden>Seleccione la categoría</option>
+                                <% categorias.forEach(categorias=>{%>
+                                    <option value="<%= categorias.id %>" <%=productEdit.id_categoria===categorias.id
+                                        ? "selected" : null %> ><%= categorias.nombre %>
+                                    </option>
+                                    <% }) %>
+                            </select>
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.categoria ? errors.categoria.msg : null %>
+                            </small>
+
+                        </div>
+
+
+                        <div class="form-option">
+                            <label for="descripcion" class="form-titulo">Descripción:</label>
+                            <textarea class="tamaño-desc" name="descripcion" id="descripcion" style="height:200px"><%= productEdit.descripcion %></textarea>
+                            <br>
+                            <small>
+                                <%= locals.errors && errors.descripcion ? errors.descripcion.msg : null %>
+                            </small>
+                            <small id="smallDescripcion"></small>
+                        </div>
+
+                        <div class="form-option">
+                            <label for="image" class="form-titulo">Imagen:</label>
+                            <input type="file" id="image" name="image" accept=".png, .jpg, .jpeg" multiple><br>
+                            <small>
+                                <%= locals.errors && errors.image ? errors.image.msg : null %>
+                            </small>
+                            <small id="smallImage"></small>
+                        </div>
+
+                        <div class="botones">
+
+                            <button type="submit" class="crear">Guardar</button>
+
+                        </div>
+                    </form>
+                </div>
+            </main>
+            <%- include("../partials/footer.ejs") %>
+    </body>
+
+    <script src="/js/editValidate.js"> </script>
+
+</html>

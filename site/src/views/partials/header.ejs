@@ -1,0 +1,111 @@
+<header>
+    <div class="header">
+
+        <div class="imgConteiner"><a class="linkLogo" href="/"> <img class="logo" src="/img/Logo_claro.png"
+                    alt="Logo"></a></div>
+
+        <div class="esquina">
+
+            <% if (!(locals.user)) { %>
+                <li class="user-menuPC">
+                    <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li class="user-menuPC">
+                    <a href="/users/login"> <img class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png"
+                            alt="user"> </a>
+                </li>
+                <% } else {%>
+                    <li class="user-menuPC">
+                        <a class="carrito" href="/products/carrito"
+                            style="display: <%= locals.user.id_rol === 1 ? " block" : "none" %>"><i
+                                class="fas fa-shopping-cart"></i></a>
+                    </li>
+                    <li class="user-menuPC">
+                        <a href="/users/Miperfil "> <img class="user"
+                                src="/img/users/<%= locals.user.imagen %> " alt="user"> </a>
+                    </li>
+                    <li class="user-menu">
+                        <a class="carrito" href="/admin" style="display: <%= locals.user.id_rol === 2 ? " block"
+                            : "none" %>;" ><i class="fas fa-user-cog"></i></a>
+                    </li>
+
+                    <li class="user-menuPC">
+                        <form action="/users/logout" method="GET"><button class="cerrarSesion" type="submit"><i
+                                    class="fas fa-sign-out-alt"></i>Salir</button></form>
+                    </li>
+
+                    <% } %>
+
+        </div>
+        <div class="icon-menu ">
+            <small id="icon-menu">☰</small>
+        </div>
+        <div class="cont-menu active" id="menu">
+            <ul>
+
+                <div class="menu-rp">
+                    <% if (!(locals.user)) { %>
+                        <li class="user-menu">
+                            <a class="carrito" href="/products/carrito"><i class="fas fa-shopping-cart"></i></a>
+                        </li>
+                        <li class="user-menu">
+                            <a href="/users/login"> <img class="user" src="/img/1200px-OOjs_UI_icon_userAvatar.svg.png"
+                                    alt="user"> </a>
+                        </li>
+                        <% } else {%>
+                            <li class="user-menu">
+                                <a class="carrito" href="/products/carrito"
+                                    style="display: <%= locals.user.id_rol === 1 ? " block" : "none" %>"><i
+                                        class="fas fa-shopping-cart"></i></a>
+                            </li>
+                            <li class="user-menu">
+                                <a href="/users/Miperfil "> <img class="user"
+                                        src="/img/users/<%= locals.user.imagen %> " alt="user"> </a>
+                            </li>
+                            <li class="user-menu">
+                                <a class="carrito" href="/admin" style="display: <%= locals.user.id_rol === 2 ? " block"
+                                    : "none" %>;" ><i class="fas fa-user-cog"></i></a>
+                            </li>
+
+                            <li class="user-menu">
+                                <form action="/users/logout" method="GET"><button class="cerrarSesion" type="submit"><i
+                                            class="fas fa-sign-out-alt"></i>Salir</button></form>
+                            </li>
+
+                        <% } %>
+                </div>
+
+                <li class="menu-option"><a href="/">HOME</a></li>
+                <li class="menu-option"><a href="/products">PRODUCTOS</a></li>
+                <li class="menu-option"><a href="/about">SOBRE NOSOTRAS</a></li>
+                <li class="menu-option"><a href="/contacto">CONTACTO</a></li>
+
+            </ul>
+        </div>
+        <!-- opciones menu pc -------------- -->
+        <div class="menupc-navbar">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="/products">PRODUCTOS</a></li>
+                <li><a href="/about">SOBRE NOSOTRAS</a></li>
+                <li><a href="/contacto">CONTACTO</a></li>
+
+            </ul>
+
+        </div>
+
+        <div class="searchBar">
+            <form  id="formSearch" class="search" action="/search" method="GET">
+                <button class="searchBttn" type="submit" style="cursor: pointer;"><i class="fas fa-search"></i></button>
+                <input type="text" id="searchBar" name="keywords" class="busqueda">
+                <section class="buscador" id="buscador">
+                </section>
+            </form>
+
+        </div>
+
+    </div>
+    <script src="/js/menu.js"></script>
+</header>
+<script src="/js/search.js"></script>
+<script src="/js/buscador.js"></script>

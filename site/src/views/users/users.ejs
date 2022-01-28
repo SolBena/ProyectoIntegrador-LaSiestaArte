@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+<title>Perfil</title>
+    <body class="usuarios">
+        <%- include('../partials/header.ejs') %>
+            <main>
+
+                <div class="tit-container">
+                    <h1 class="titulo">¡Hola <%= usuario.nombre %>!</h1>
+                </div>
+
+
+                <h2>Bienvenido a tu perfil</h2>
+
+                <div class="container">
+                    <div class="img-container">
+                        <div class="foto">
+                            <img class="perfil" src='/img/users/<%= usuario.imagen %> ' width="100%"
+                                alt="Foto de perfil">
+                        </div>
+                    </div>
+
+                    <section class="datos">
+
+                        <h3>Datos de tu cuenta</h3>
+
+                        <div>
+                            <p class="a">Tu nombre:</p>
+                            <p class="b">
+                                <%= usuario.nombre %>
+                                    <%= usuario.apellido %>
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="a">Tipo de usuario:</p>
+                            <p class="b">
+                                <%= usuario.roles.nombre %>
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="a">Tu email:</p>
+                            <p class="b">
+                                <%= usuario.email %>
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="a">Tu celular:</p>
+                            <p class="b">
+                                <%= usuario.telefono %>
+                            </p>
+                        </div>
+
+                        <div>
+                            <p class="a">Tu ubicación:</p>
+                            <p class="b">
+                                <%= usuario.localidad %>- <%= usuario.provincia %>
+                            </p>
+                        </div>
+
+
+                    </section>
+
+                    <a href="/users/edit/<%= usuario.id %>" class="button">
+
+                      <p> <i class="fas fa-edit"></i> Editá tu perfil</p>
+
+                        
+                    </a>
+                </div>
+
+
+
+
+
+            </main>
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('../partials/head.ejs') %> 
+    <title>Categoria</title>
+<body class="banio">
+    <!--     Comienza el header---------------------------- -->
+     
+<%- include('../partials/header.ejs') %> 
+
+    <!-- Fin header ------------------------------------------------------ -->
+
+    <main>
+
+        <section class="main-header">
+            <div class="img-container">
+                <img src="/img/<%= selecCategoria.img %> " width="100%" alt="Productos para el baño">
+            </div>
+            <div class="tit-container">
+                <h1 class="titulo"><%= selecCategoria.titulo %></h1>
+            </div>
+        </section>
+
+        <div class="pdtos-container">
+
+        <% let cont= 1 %> 
+        <% productos.forEach(producto=>{ %> 
+           <% if(producto.categoriasPr.nombre === selecCategoria.nombre && cont<5){%>  
+            <article class="pdto<%= cont %> ">
+                <div class="photo">
+                  <a href="/products/detail/<%= producto.id %>"> <img src='/img/products/<%= producto.productosIm[0].nombre   %> ' width="100%" alt="<%= producto.titulo  %>" /></a>
+                </div>
+                <div class="description">
+                    <div class="categoria">
+                        <h3 class="subt"><%= producto.nombre  %></h3>
+                        <i class="fas fa-regular fa-heart"></i>
+                    </div>
+
+                    <h2 class="subtprecio"><%= producto.precio  %></h2>
+                    <p><%= producto.descripcion  %></p>
+                </div>
+            </article>
+            <% cont++ %> 
+            <% } %> 
+        <% }) %> 
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer------------------------------- -->
+    <%- include('../partials/footer') %> 
+    <!-- Fin del footer ------------------------------------->
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <main class="products">
+
+                <div class="tit-container">
+                    <h1 class="titulo">Todos nuestros productos</h1>
+                </div>
+
+                <section class="pdtos-container">
+
+                    <section class="producto">
+                        <article class="fotos">
+                            <div class="img-principal">
+                                <button>
+                                    <i class="fas fa-solid fa-angle-left"></i>
+                                </button>
+                                <img src="/img/products/<%= producto.productosIm[0].nombre %> " alt="Imagen principal">
+                                <button>
+                                    <i class="fas fa-solid fa-angle-right"></i>
+                                </button>
+                            </div>
+                            <div class="miniaturas">
+                                <div class="img-secundaria">
+                                    <img  src="/img/taza01-a.jpg" alt="Imagen miniatura 01">
+                                    <img  src="/img/taza01-b.jpg" alt="Imagen miniatura 02">
+                                    <img  src="/img/taza01-c.jpg" alt="Imagen miniatura 03">
+                                </div>
+                            </div>
+                        </article>    
+            
+                        <article class="descripcion">
+                            <h2>$<%= producto.precio %> </h2>
+                            <h4><%= producto.descripcion %></h4>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad consequuntur tenetur illo ex delectus, quod dolorum.</p>
+                            <div class="cantidad">
+                                <h4>Cantidad</h4>
+                                <div>
+                                <input class="agregarRestar" type="button" value="-">
+                                <input type="number" value="1">
+                                <input class="agregarRestar" type="button" value="+">
+                                </div>
+                            </div>
+                            <div class="botones">
+                                <input class="agregar" type="button" value="Agregar al carrito">
+                                <a href="/products/carrito">
+                                    <input class="comprar" type="button" value="Comprar">
+                                </a>
+                            </div>
+                        </article>
+                    </section>
+
+                </section>
+            </main>
+            <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

@@ -1,0 +1,131 @@
+.aboutus {
+    background-image: url("../img/background.jpg");
+}
+
+.aboutus .video-container  {
+width: 100%
+}
+
+.aboutus h2 {
+    font-family: var(--titulos);
+    color: var(--rojo);
+    font-size: 2rem;
+    text-align: center;
+}
+
+.aboutus h3 {
+    font-family: var(--titulos);
+    color: var(--rojo);
+    text-align: center;
+    font-size: 1.75rem;
+}
+
+.aboutus p {
+    font-family: var(--textos);
+}
+
+.aboutus .tit-container {
+    padding-bottom: 7px;
+    border-bottom: solid 2px var(--rojo);
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.aboutus .sobre-nosotras  {
+    display: flex;
+    flex-direction: column;
+} 
+
+
+
+.aboutus .sobre-nosotras .text-container {
+    padding: 20px;
+}
+
+
+.aboutus .cada-una .team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+
+.aboutus .sobre-nosotras .img-container{
+    width: 320 px;
+}
+
+.aboutus .cada-una p {
+    padding: 15px;
+}
+
+
+
+
+/* Tablet------------- */
+/* Tablet------------- */
+
+@media (min-width: 481px) {
+
+    .aboutus .aboutus-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    } 
+
+    .aboutus .video-container  {
+    align-self: center;
+    width: 90%
+    }
+
+
+}
+
+
+/* Desktop------------- */
+/* Desktop------------- */
+
+@media (min-width: 769px) {
+
+.aboutus .sobre-nosotras {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutus .video-container iframe {
+    width: 100%;
+}
+
+    .aboutus .video-container  {
+        width: 75%;
+
+        }
+
+    .aboutus .sobre-nosotras .text-container {
+        width: 60%;
+    }
+
+    .aboutus .cada-una {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        }
+
+        .aboutus .cada-una .team {
+            width: 30%;
+        }
+/* 
+    .aboutus .cada-una .img-container {
+        width: 100px;
+    }    */
+
+
+
+    .aboutus .map-container {
+        width: 100%;
+    }
+
+}
